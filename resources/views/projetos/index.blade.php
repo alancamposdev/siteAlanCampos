@@ -26,7 +26,7 @@
                         <th style="width: 10px">Imagem</th>
                         <th>Nome</th>
                         <th>Link</th>
-                        <th>Id-Modal</th>
+                        <th>Id</th>
                         <th>Criado em</th>
                         <th>Ações</th>
                     </tr>
@@ -36,14 +36,18 @@
                 @foreach ( $projetos as $projeto)   
                
                   <tr>
-                      <td><img src="/images/projetos/{{$projeto->imagem}}" alt="Project Image" class="img-circle img-sm"  style="width: 60px"></td>
+                      <td><img src="/images/projetos/{{$projeto->imagem}}" alt="Project Image {{$projeto->titulo}}" class="img-circle img-sm"  style="width: 60px"></td>
                       <td> {{$projeto->titulo}}      </td>
                       <td> {{$projeto->linkProjeto}} </td>
                       <td> {{$projeto->id }}    </td>
                       <td> {{$projeto->created_at}}  </td>
                       <td>
                         <a href="/projetos/{{ $projeto-> id}}/edit" class="btn btn-primary btn-xs btn-flat mb-1">Editar</a>
-                          <a href="" class="btn btn-danger btn-xs btn-flat">Excluir</a>
+                        <form action="/projetos/{{ $projeto->id}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                          <button type="submit" class="btn btn-danger btn-xs btn-flat">Excluir</button>
+                        </form>
                       </td>
                   </tr>
 

@@ -42,7 +42,7 @@
                                 <div class="portfolio-item-caption-content text-center text-white"><i
                                         class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="/images/projetos/{{$projeto->imagem}}" alt="..." /> 
+                            <img class="img-fluid" src="/images/projetos/{{$projeto->imagem}}" alt="imagem {{ $projeto->titulo }}" /> 
                         </div>
                     </div>
 
@@ -69,7 +69,7 @@
                                                 </div>
                                                 <!-- Portfolio Modal - Image-->
                                                 <img class="img-fluid rounded mb-5"
-                                                    src="/images/projetos/{{$projeto->imagem}}" alt="..." /> 
+                                                    src="/images/projetos/{{$projeto->imagem}}" alt="imagem {{ $projeto->titulo }}" /> 
 
                                                 <!-- Portfolio Modal - Text-->
                                                 <p class="mb-4"> {{ $projeto->descricao }}</p>

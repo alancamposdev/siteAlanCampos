@@ -105,8 +105,9 @@ class ProjetoController extends Controller
      * @param  \App\Models\Projeto  $projeto
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Projeto $projeto)
+    public function destroy($id)
     {
-        //
+        Projeto::findOrFail($id)->delete();
+        return redirect('/projetos');
     }
 }
