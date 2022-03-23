@@ -47,7 +47,7 @@
                     </div>
 
                     <!-- Portfolio Modal -->
-                    <div class="portfolio-modal modal fade" id="{{ $projeto->id }}" tabindex="-1"
+                    <div class="portfolio-modal modal fade" id="portfolioModal{{ $projeto->id }}" tabindex="-1"
                         aria-labelledby="portfolioModal{{ $projeto->id }}" aria-hidden="true">
                         <div class="modal-dialog modal-xl">
                             <div class="modal-content">
