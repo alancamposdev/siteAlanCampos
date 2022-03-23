@@ -20,7 +20,7 @@
                     <div class="divider-custom-line"></div>
                 </div>
 
-                <form action="{{ route('projetos.store') }}" method="POST" />
+                <form action="{{ route('projetos.store') }}" method="POST" enctype="multipart/form-data" />
                 @csrf
                 
                     <div class="col mb-3">                       
@@ -61,11 +61,7 @@
                     id="imagem"       
                     aria-label="Server">
                 </div>
-                    
-                    
-               
-
-
+                                      
                 <div class="mb-3 text-center">
                     <button type="submit" class="btn-lg btn-primary">Adicionar projeto</button>
                 </div>

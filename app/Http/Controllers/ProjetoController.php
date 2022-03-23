@@ -37,7 +37,31 @@ class ProjetoController extends Controller
      */
     public function store(Request $request)
     {
-        Projeto::create($request->all());
+        // Projeto::create($request->all());
+
+        $projeto = new Projeto;
+        $projeto->titulo = $request->titulo;
+        $projeto->descricao = $request->descricao;
+        $projeto->linkProjeto = $request->linkProjeto;
+        $projeto->imagem = $request->imagem;
+        // $projetos = $request()->all();
+
+        //Image Upload
+        if($request->hasFile('imagem') && $request->file('imagem')->isvalid())
+        {
+
+            $requestImage = $request->imagem;
+
+            $extension = $requestImage->extension();
+
+            $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
+
+            $requestImage->move(public_path('images/projetos'), $imageName);
+
+            $projeto->imagem = $imageName;
+        
+        }
+        $projeto->save();
         return redirect('/projetos');
     }
 

@@ -36,19 +36,19 @@
                     <!-- Portfolio Itens -->
                     <div class="col-md-6 mb-3">
                          <div class="portfolio-item mx-auto" data-bs-toggle="modal"
-                            data-bs-target="#{{ $projeto->id }}">
+                            data-bs-target="#portfolioModal{{ $projeto->id }}">
                             <div
                                 class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i
                                         class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            {{-- <img class="img-fluid" src="{{ asset($projeto->urlImg) }}" alt="..." /> --}}
+                            <img class="img-fluid" src="/images/projetos/{{$projeto->imagem}}" alt="..." /> 
                         </div>
                     </div>
 
                     <!-- Portfolio Modal -->
-                    <div class="portfolio-modal modal fade" id="{{ $projeto->idModal }}" tabindex="-1"
-                        aria-labelledby="{{ $projeto->id }}" aria-hidden="true">
+                    <div class="portfolio-modal modal fade" id="{{ $projeto->id }}" tabindex="-1"
+                        aria-labelledby="portfolioModal{{ $projeto->id }}" aria-hidden="true">
                         <div class="modal-dialog modal-xl">
                             <div class="modal-content">
                                 <div class="modal-header border-0"><button class="btn-close" type="button"
@@ -68,8 +68,8 @@
                                                     <div class="divider-custom-line"></div>
                                                 </div>
                                                 <!-- Portfolio Modal - Image-->
-                                                {{-- <img class="img-fluid rounded mb-5"
-                                                    src="{{ asset($projeto->urlImg) }}" alt="..." /> --}}
+                                                <img class="img-fluid rounded mb-5"
+                                                    src="/images/projetos/{{$projeto->imagem}}" alt="..." /> 
 
                                                 <!-- Portfolio Modal - Text-->
                                                 <p class="mb-4"> {{ $projeto->descricao }}</p>

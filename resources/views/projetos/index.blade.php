@@ -8,7 +8,7 @@
         {{-- total de projetos --}}
         <div class="box-top container bg-success my-3">
             <div class=" text-white p-3 ">
-                <div class="display-3 text-center">00</div>
+                {{-- <div class="display-3 text-center"> {{$projetoAll}}</div> --}}
                 <h3 class="display-4 text-center">Total de Projetos</h3>
             </div>
             <div class="icon">
@@ -36,14 +36,14 @@
                 @foreach ( $projetos as $projeto)   
                
                   <tr>
-                      <td><img src="{{asset ($projeto->imagem)}}" alt="Project Image" class="img-circle img-sm"  style="width: 60px"></td>
+                      <td><img src="/images/projetos/{{$projeto->imagem}}" alt="Project Image" class="img-circle img-sm"  style="width: 60px"></td>
                       <td> {{$projeto->titulo}}      </td>
                       <td> {{$projeto->linkProjeto}} </td>
                       <td> {{$projeto->id }}    </td>
                       <td> {{$projeto->created_at}}  </td>
                       <td>
-                        <a href="/projetos/{{ $projeto-> id}}/edit" class="btn btn-primary btn-xs btn-flat">Editar</a>
-                          <button type="button" class="btn btn-danger btn-xs btn-flat">Excluir</button>
+                        <a href="/projetos/{{ $projeto-> id}}/edit" class="btn btn-primary btn-xs btn-flat mb-1">Editar</a>
+                          <a href="" class="btn btn-danger btn-xs btn-flat">Excluir</a>
                       </td>
                   </tr>
 

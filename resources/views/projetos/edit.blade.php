@@ -22,42 +22,53 @@
                     <div class="divider-custom-line"></div>
                 </div>
 
-                <form action="{{ route('projetos.store') }}" method="POST" />
+                <form action="{{ route('projetos.store') }}" method="POST" enctype="multipart/form-data"/>
                 @csrf
                 <div class="row g-3 mb-3">
-                    <div class="col-md-6">
-                        <label for="titulo" class="form-label">Titulo</label>
-                        <input type="text" class="form-control" id="titulo" name="titulo" placeholder="My projeto" value="{{ $projeto->titulo }}">
+                    <div class="col mb-3">                       
+                        <input type="text" 
+                        class="form-control" 
+                        id="titulo" 
+                        name="titulo" 
+                        placeholder="Nome do projeto"
+                        value="{{ $projeto->titulo }}">
+                    </div> 
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Descrição</span>
+                        <textarea 
+                        class="form-control" 
+                        aria-label="descricao" 
+                        name="descricao" 
+                        id="descricao">
+                        {{$projeto->descricao}}
+                        </textarea>
                     </div>
-                    <div class="col-md-6">
-                        <label for="idModal" class="form-label">IDModal</label>
-                        <input type="text" class="form-control" name="idModal" id="idModal"
-                            placeholder="portfolioModal001"
-                            value=" {{$projeto->idModal}}">
 
-                    </div>
-                </div>
-
-
-                <div class="input-group mb-3">
-                  <span class="input-group-text">Descrição</span>
-                  <textarea class="form-control" aria-label="descricao" name="descricao" id="descricao" >{{$projeto->descricao}}
-                  </textarea>
-                </div>
-
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="linkProjeto">url do repositório</span>
-                    <input type="text" class="form-control" id="linkProjeto" name="linkProjeto"
-                    placeholder="https://repositorio.com.br" aria-label="Server"
-                    value="{{$projeto->linkProjeto}}">
-                </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="urlImg">local da img</span>
-                    <input type="text" class="form-control" name="urlImg" id="urlImg" placeholder="images/foto.jpg"
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">link repositório</span>
+                        <input type="text" 
+                        class="form-control" 
+                        id="linkProjeto" 
+                        name="linkProjeto"
+                        placeholder="https://meu-repositorio.com.br" 
                         aria-label="Server"
-                        value="{{$projeto->urlImg}}">
-                </div>
+                        value="{{$projeto->linkProjeto}}"/>
+                    </div>
+                    
+                    <div class="input-group mb-3">
 
+                        <label for="imagem "class="input-group-text" >
+                            Imagem do projeto
+                        </label>
+                        <input type="file" 
+                        class="form-control" 
+                        name="imagem" 
+                        id="imagem"       
+                        aria-label="Server"
+                        value="{{$projeto->imagem}}">
+                    </div>
+                </div>                
 
                 <div class="mb-3 text-center">
                     <button type="submit" class="btn-lg btn-primary">Editar projeto</button>
