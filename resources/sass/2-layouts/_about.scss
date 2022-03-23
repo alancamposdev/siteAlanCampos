@@ -1,0 +1,10 @@
+@use '../1-base/variables' as *;
+
+#about{
+  background-color: #6C757D;
+  color: $dark-light-color;
+  p{
+    font-size: 1.5rem;
+  }
+  
+}

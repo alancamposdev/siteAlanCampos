@@ -1,0 +1,7 @@
+@use '../1-base/variables' as *;
+
+#contact{
+  background-color: $light-color;
+  .content-contact{
+    background-color: $dark-light-color;}
+}

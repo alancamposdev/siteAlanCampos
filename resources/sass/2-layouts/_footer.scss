@@ -1,0 +1,19 @@
+@use '../1-base/variables' as *;
+.footer{
+  background-color: $dark-color; 
+  color: $light-color;
+  padding-top: 5rem;  
+  .btn-social{
+    border-radius: 100%;
+    display: inline-flex;
+    width: 3.25rem;
+    height: 3.25rem;
+    font-size: 1.25rem;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.copyright {
+  background-color: $dark-color;
+  color: $dark-light-color;
+}
