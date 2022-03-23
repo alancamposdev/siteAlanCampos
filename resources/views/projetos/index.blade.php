@@ -33,13 +33,13 @@
                 </thead>
                 <tbody>
                     {{-- {{ asset($projeto->urlImg) }} --}}
-                {{-- @foreach ( $projetos as $projeto)   
+                @foreach ( $projetos as $projeto)   
                
                   <tr>
-                      <td><img src="{{asset ($projeto->urlImg)}}" alt="Project Image" class="img-circle img-sm"  style="width: 60px"></td>
+                      <td><img src="{{asset ($projeto->imagem)}}" alt="Project Image" class="img-circle img-sm"  style="width: 60px"></td>
                       <td> {{$projeto->titulo}}      </td>
                       <td> {{$projeto->linkProjeto}} </td>
-                      <td> {{$projeto->idModal }}    </td>
+                      <td> {{$projeto->id }}    </td>
                       <td> {{$projeto->created_at}}  </td>
                       <td>
                         <a href="/projetos/{{ $projeto-> id}}/edit" class="btn btn-primary btn-xs btn-flat">Editar</a>
@@ -47,7 +47,7 @@
                       </td>
                   </tr>
 
-                @endforeach --}}
+                @endforeach  
                
                 </tbody>
             </table>

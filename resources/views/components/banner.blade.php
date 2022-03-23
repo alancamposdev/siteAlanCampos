@@ -15,7 +15,7 @@
                   <a class="btn btn-outline-primary mt-3" href="{{ asset('/contato') }}">Entre em contato</a>
               </div>
               <!-- Imagem Avatar -->
-              <img class="banner-avatar img-fluid" src="{{ asset('assets/images/imagem1.png') }}" alt="">
+              <img class="banner-avatar img-fluid" src="{{ asset('images/imagem1.png') }}" alt="">
               <!-- Masthead Heading-->
               <h1 class="banner-heading text-uppercase mb-0">Full Stack Developer</h1>
               <!-- Icon Divider-->

@@ -15,7 +15,6 @@ class ProjetoController extends Controller
     public function index()
     {
         $projetos = Projeto::all();
-
         return view('projetos.index',['projetos' => $projetos]);
        
     }
@@ -39,6 +38,7 @@ class ProjetoController extends Controller
     public function store(Request $request)
     {
         Projeto::create($request->all());
+        return redirect('/projetos');
     }
 
     /**
@@ -60,7 +60,7 @@ class ProjetoController extends Controller
      */
     public function edit(Projeto $projeto)
     {
-        return view('projetos/edit',['projeto' => $projeto]);
+        return view('projetos.edit',['projeto' => $projeto]);
     }
 
     /**
