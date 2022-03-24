@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Contato;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\Sendmail;
+
 
 class ContatoController extends Controller
 {
@@ -34,17 +37,29 @@ class ContatoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
+        //envia para o banco de dados
         Contato::create ([
             'nome' => $request -> nome,
             'email'=> $request -> email,
-            'telefone' => $request -> telefone,
+            'assunto' => $request -> assunto,
             'mensagem' => $request -> mensagem
         ]);
+
+        $data = array (
+            'nome' => $request->nome,
+            'email'=> $request->email,
+            'assunto' => $request->assunto,
+            'mensagem' => $request->mensagem
+        );
+
+        Mail::to( config('mail.from.address'))
+        ->send(new Sendmail($data));
 
         return redirect()->back()->with([
             'message' => 'Sucesso'
         ]);
+         
     }
 
     /**
@@ -91,4 +106,5 @@ class ContatoController extends Controller
     {
         //
     }
+   
 }

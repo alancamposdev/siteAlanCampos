@@ -45,24 +45,28 @@
                         <!-- Name input-->
                         <div class="form-floating mb-3">
                             <input class="form-control" id="name" name="nome" type="text" placeholder="" required />
-                            <label for="name">Nome Completo</label>                            
+                            <label for="name">Nome</label>
+                                                      
                         </div>
                         <!-- Email address input-->
                         <div class="form-floating mb-3">
                             <input class="form-control" id="email" name="email" type="email" placeholder="name@example.com" required />
-                            <label for="email">Email</label>                         
+                            <label for="email">Email</label>
+                                                  
                         </div>
 
                         <!-- Phone number input-->
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="phone" name="telefone" type="tel" placeholder="(00) 00000-0000" required>
-                            <label for="phone">Telefone</label>
+                            <input class="form-control" id="assunto" name="assunto" type="text" placeholder="(00) 00000-0000" required>
+                            <label for="assunto">Assunto</label>
+                            
                         </div>
 
                         <!-- Message input-->
                         <div class="form-floating mb-3">
-                            <textarea class="form-control" id="message" name="mensagem" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-                            <label for="message">Mensagem</label> 
+                            <textarea class="form-control" id="mensagem" name="mensagem" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+                            <label for="mensagem">Mensagem</label>
+                            
                         </div>                      
                        
                         
@@ -76,7 +80,7 @@
                                 </svg><br>
                                 
                             </button>
-                            <div class=" alert alert-dark p-3 text-black-50">Obrigado! Responderei o mais breve possível 
+                            <div class=" alert bg-success p-3 text-white-50">Obrigado! Responderei o mais breve possível 
                                 <p><a href="{{asset('/home')}}" class="alert-link">>> Clique aqui << </a>, para voltar a página inicial.</p>
                             </div>
                         @else

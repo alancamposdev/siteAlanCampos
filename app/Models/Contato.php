@@ -10,5 +10,5 @@ class Contato extends Model
     use HasFactory;
     
     public $table = 'contatos';
-    public $fillable = ['nome','email','telefone','mensagem'];
+    public $fillable = ['nome','email','assunto','mensagem'];
 }
