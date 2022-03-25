@@ -12,10 +12,12 @@ class ProjetoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    //mostra uma lista de de variaveis vindas do BD.
     public function index()
     {
         $projetos = Projeto::all();
-        return view('projetos.index',['projetos' => $projetos]);
+        $projetosTotal = count($projetos);
+        return view('projetos.index',['projetos' => $projetos, 'projetosTotal' => $projetosTotal]);
        
     }
 
@@ -24,6 +26,7 @@ class ProjetoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    //mostra a view de criar novo projeto
     public function create()
     {
         return view('projetos.create');
@@ -35,6 +38,7 @@ class ProjetoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    //recebe informações do BD e armazena no BD
     public function store(Request $request)
     {
         // Projeto::create($request->all());
@@ -44,7 +48,7 @@ class ProjetoController extends Controller
         $projeto->descricao = $request->descricao;
         $projeto->linkProjeto = $request->linkProjeto;
         $projeto->imagem = $request->imagem;
-        // $projetos = $request()->all();
+        
 
         //Image Upload
         if($request->hasFile('imagem') && $request->file('imagem')->isvalid())
@@ -73,7 +77,8 @@ class ProjetoController extends Controller
      */
     public function show(Projeto $projeto)
     {
-        return $projeto;
+        
+       //
     }
 
     /**
@@ -82,9 +87,12 @@ class ProjetoController extends Controller
      * @param  \App\Models\Projeto  $projeto
      * @return \Illuminate\Http\Response
      */
-    public function edit(Projeto $projeto)
-    {
-        return view('projetos.edit',['projeto' => $projeto]);
+    public function edit(Projeto $projeto, $id) 
+    //retorna os dados a serem editados
+    {   
+        $projeto = Projeto::find($id);
+
+        return view('projetos.edit',['projeto' => $projeto, 'id'=>$id]);
     }
 
     /**
@@ -94,9 +102,18 @@ class ProjetoController extends Controller
      * @param  \App\Models\Projeto  $projeto
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Projeto $projeto)
-    {
-        //
+    public function update(Request $request, Projeto $projeto, $id)
+    //recebe e atualiza os dados no Banco de dados
+    {   
+        $projeto = Projeto::find($id);
+        $projeto->titulo = $request->get ('titulo');
+        $projeto->descricao = $request->get ('descricao');
+        $projeto->linkProjeto = $request->get('linkProjeto');
+        $projeto->imagem = $request->get('imagem');
+        $projeto->save();
+
+    //    Projeto::findOrFail($request->id)->update($request->all());
+       return redirect('/projetos'); 
     }
 
     /**

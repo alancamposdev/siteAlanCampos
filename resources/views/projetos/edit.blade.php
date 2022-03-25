@@ -22,8 +22,9 @@
                     <div class="divider-custom-line"></div>
                 </div>
 
-                <form action="{{ route('projetos.store') }}" method="POST" enctype="multipart/form-data"/>
+                <form action="{{ route('projetos.update', $projeto->id) }}" method="POST" enctype="multipart/form-data"/>
                 @csrf
+                @method('PATCH')
                 <div class="row g-3 mb-3">
                     <div class="col mb-3">                       
                         <input type="text" 

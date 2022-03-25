@@ -10,4 +10,5 @@ class Projeto extends Model
     use HasFactory;
     public $table = 'projetos';
     public $fillable = ['titulo','descricao','linkProjeto','imagem'];
+    protected $guarded = [];
 }

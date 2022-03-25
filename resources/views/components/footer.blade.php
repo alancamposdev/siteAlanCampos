@@ -50,4 +50,5 @@
         $year = date('Y');
     @endphp
         <div class="container"><small>Copyright &copy;  <!--2021-->{{$year}}</small></div>
+        
     </div>

@@ -63,7 +63,7 @@
                 </div>
                                       
                 <div class="mb-3 text-center">
-                    <button type="submit" class="btn-lg btn-primary">Adicionar projeto</button>
+                    <button type="submit" class="btn-lg btn-primary">Adicionar</button>
                 </div>
                 </form>
             </div>

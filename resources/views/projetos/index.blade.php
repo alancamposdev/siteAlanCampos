@@ -8,7 +8,16 @@
         {{-- total de projetos --}}
         <div class="box-top container bg-success my-3">
             <div class=" text-white p-3 ">
-                {{-- <div class="display-3 text-center"> {{$projetoAll}}</div> --}}
+                <div class="display-3 text-center"> 
+                    @if ($projetosTotal > 0)
+                        <span> 0{{$projetosTotal}} </span>
+                    @elseif ($projetoTotal >= 10)
+                            <span> {{$projetosTotal}} </span>
+                        
+                    @else
+                        <span> 00 </span>
+                    @endif
+                </div>
                 <h3 class="display-4 text-center">Total de Projetos</h3>
             </div>
             <div class="icon">
@@ -32,7 +41,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {{-- {{ asset($projeto->urlImg) }} --}}
+                   
                 @foreach ( $projetos as $projeto)   
                
                   <tr>
@@ -54,8 +63,9 @@
                 @endforeach  
                
                 </tbody>
+                
             </table>
-
+            <a class="btn btn-outline-info  w-100" href="projetos/create">Adicionar novo projeto</a>
         </div>
        
     </section>
