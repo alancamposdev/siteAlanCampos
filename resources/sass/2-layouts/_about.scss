@@ -3,8 +3,17 @@
 #about{
   background-color: #6C757D;
   color: $dark-light-color;
-  p{
-    font-size: 1.5rem;
+  .about-content{
+    p{
+      font-size: 1.5rem;
+    }
+    .img-box{
+      // background-color: ;
+      border-radius: 1rem;
+      border:3px solid rgba(75, 58, 58, 0.062);
+    }
   }
+    
+
   
 }

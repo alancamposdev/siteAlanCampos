@@ -14,7 +14,7 @@
             <div class="divider-custom-line"></div>
         </div>
         <!-- Conteudo da seção-->
-        <div>
+        <div class="about-content">
             <div class="row  p-3 text-center ">
                 <div class="col-8 d-flex flex-column flex-fill align-items-center justify-content-center">
                     <div class="col-lg-4">
@@ -41,7 +41,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-4 d-none d-md-block">
+                <div class="col-4 d-none d-md-block img-box">
                     <img class="img-fluid" src="{{ asset('images/imagem2.png') }}" alt="">
                 </div>
             </div>

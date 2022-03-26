@@ -87,12 +87,13 @@ class ProjetoController extends Controller
      * @param  \App\Models\Projeto  $projeto
      * @return \Illuminate\Http\Response
      */
-    public function edit(Projeto $projeto, $id) 
+    public function edit(Projeto $projeto) 
     //retorna os dados a serem editados
     {   
-        $projeto = Projeto::find($id);
+        $projeto = Projeto::find();
+        $projeto->id;
 
-        return view('projetos.edit',['projeto' => $projeto, 'id'=>$id]);
+        return view('projetos.edit',['projeto' => $projeto]);
     }
 
     /**
@@ -112,7 +113,7 @@ class ProjetoController extends Controller
         $projeto->imagem = $request->get('imagem');
         $projeto->save();
 
-    //    Projeto::findOrFail($request->id)->update($request->all());
+        //Projeto::findOrFail($request->id)->update($request->all());
        return redirect('/projetos'); 
     }
 

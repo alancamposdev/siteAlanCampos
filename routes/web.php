@@ -16,6 +16,12 @@ Route::resource('contato', ContatoController::class);
 Route::resource('projetos', ProjetoController::class);
 
 
+//Criando uma area admin
+Route::prefix('admin')->name('admin.')->group(function()   {
+  //
+  Route::resource('/', AdminController::class);
+});
+
 //retorna algo para o usuário
 Route::fallback(function(){
   return "Página não encontrada";
