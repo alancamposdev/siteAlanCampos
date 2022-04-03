@@ -2,7 +2,7 @@
   <!--Banner Section -->
   {{ $slot }}
   <section class="banner page-section text-white mb-0 bg-dark">
-      <div class="container">
+      <div class="container ">
           <div class="banner-box">
 
           </div>
@@ -17,7 +17,7 @@
               <!-- Imagem Avatar -->
               <img class="banner-avatar img-fluid" src="{{ asset('images/imagem1.png') }}" alt="">
               <!-- Masthead Heading-->
-              <h1 class="banner-heading text-uppercase mb-0">Full Stack Developer</h1>
+              <h1 class="banner-heading text-uppercase mb-0">Full Stack Developer JR</h1>
               <!-- Icon Divider-->
               <div class="divider-custom divider-light">
                   <div class="divider-custom-line"></div>

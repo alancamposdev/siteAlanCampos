@@ -9,7 +9,7 @@
         <div class="box-top container bg-success my-3">
             <div class=" text-white p-3 ">
                 <div class="display-3 text-center"> 
-                    @if ($projetosTotal > 0)
+                    @if ($projetosTotal >= 0)
                         <span> 0{{$projetosTotal}} </span>
                     @elseif ($projetoTotal >= 10)
                             <span> {{$projetosTotal}} </span>
@@ -52,7 +52,7 @@
                       <td> {{$projeto->created_at}}  </td>
                       <td>
                         <a href="/projetos/{{ $projeto-> id}}/edit" class="btn btn-primary btn-xs btn-flat mb-1">Editar</a>
-                        <form action="/projetos/{{ $projeto->id}}" method="POST">
+                        <form action="/projetos/edit " method="POST">
                             @csrf
                             @method('DELETE')
                           <button type="submit" class="btn btn-danger btn-xs btn-flat">Excluir</button>

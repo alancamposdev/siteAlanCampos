@@ -13,12 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('projetos', function (Blueprint $table) {
+        Schema::create('log_acessos', function (Blueprint $table) {
             $table->id();
-            $table->string('titulo', 160);            
-            $table->text('descricao');            
-            $table->text('linkProjeto');
-            $table->string('imagem')->nullable();
+            $table->string('log',200);
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('projetos');
+        Schema::dropIfExists('log_acessos');
     }
 };

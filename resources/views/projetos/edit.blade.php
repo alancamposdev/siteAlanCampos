@@ -24,7 +24,7 @@
 
                 <form action="{{ route('projetos.update', $projeto->id) }}" method="POST" enctype="multipart/form-data"/>
                 @csrf
-                @method('PATCH')
+                @method('PUT')
                 <div class="row g-3 mb-3">
                     <div class="col mb-3">                       
                         <input type="text" 
@@ -68,7 +68,10 @@
                         id="imagem"       
                         aria-label="Server"
                         value="{{$projeto->imagem}}">
+
                     </div>
+                    <!--img src="/images/projetos/{{$projeto->imagem}}" id="preview" alt="Project Image {{$projeto->titulo}}" class="img-circle img-sm"  style="width: 600px"-->
+
                 </div>                
 
                 <div class="mb-3 text-center">
@@ -78,3 +81,11 @@
             </div>
     </section>
 @endsection
+
+@push('javascript')
+<!--script>
+    $('#preview').on('click', function() {
+        $(this).src = 'link novo'
+    })
+</!--scr--ipt>
+@endpush

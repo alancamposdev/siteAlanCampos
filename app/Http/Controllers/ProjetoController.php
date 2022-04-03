@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Projeto;
+use GuzzleHttp\Psr7\Response;
 use Illuminate\Http\Request;
 
 class ProjetoController extends Controller
@@ -87,13 +88,10 @@ class ProjetoController extends Controller
      * @param  \App\Models\Projeto  $projeto
      * @return \Illuminate\Http\Response
      */
-    public function edit(Projeto $projeto) 
+    public function edit(Projeto $projeto ) 
     //retorna os dados a serem editados
-    {   
-        $projeto = Projeto::find();
-        $projeto->id;
-
-        return view('projetos.edit',['projeto' => $projeto]);
+    {           
+       return view('projetos.edit', ['projeto' => $projeto]);
     }
 
     /**
@@ -103,14 +101,30 @@ class ProjetoController extends Controller
      * @param  \App\Models\Projeto  $projeto
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Projeto $projeto, $id)
+    public function update(Request $request, Projeto $projeto)
     //recebe e atualiza os dados no Banco de dados
     {   
-        $projeto = Projeto::find($id);
         $projeto->titulo = $request->get ('titulo');
         $projeto->descricao = $request->get ('descricao');
         $projeto->linkProjeto = $request->get('linkProjeto');
         $projeto->imagem = $request->get('imagem');
+
+        //Image Upload
+        if($request->hasFile('imagem') && $request->file('imagem')->isvalid())
+        {
+
+            $requestImage = $request->imagem;
+
+            $extension = $requestImage->extension();
+
+            $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
+
+            $requestImage->move(public_path('images/projetos'), $imageName);
+
+            $projeto->imagem = $imageName;
+        
+        }
+        
         $projeto->save();
 
         //Projeto::findOrFail($request->id)->update($request->all());
