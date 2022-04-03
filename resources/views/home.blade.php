@@ -16,7 +16,7 @@
     <section id="portfolio" class="page-section portfolio">
         <div class="container mt-4">
             <!-- Portfolio Section Header-->
-            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfólio</h2>
             <!-- divider icons-->
             <div class="divider-custom">
                 <div class="divider-custom-line"></div>
