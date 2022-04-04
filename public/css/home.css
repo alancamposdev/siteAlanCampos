@@ -1,7 +1,1 @@
-#banner .color-name{
-  color:gray ;
-  display: inline-block;
-}
-#banner .btn:hover{
-  box-shadow: 0px 0px 0px 1px #808080;
-}
+#banner .color-name{color:gray;display:inline-block}#banner .btn:hover{box-shadow:0 0 0 1px grey}
