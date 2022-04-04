@@ -8,7 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!--Seo Metas-->
     <meta name="author" content="Alan Campos" />
-    <meta name="description" content="desenvolvedor web" />
+    <meta name="description" content="desenvolvedor web, front-end, site pessoal" />
+    <meta name="keywords" content="desenvolvedor web, front-end, site pessoal" />
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.png" />
     <!-- Font Awesome icons free -->
