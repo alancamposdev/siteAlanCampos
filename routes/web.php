@@ -33,4 +33,4 @@ Route::middleware(LogAcessoMiddleware::class)
 Route::fallback(function(){
   return "Página não encontrada";
 });
-  
+Route::view('/postOne','post.postOne')->name('postOne');

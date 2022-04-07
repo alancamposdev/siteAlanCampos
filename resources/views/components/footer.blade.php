@@ -43,12 +43,13 @@
                 <a href="/" class="text-decoration-none">Alan Campos</a>.
             </p>        
         </div>
-    </footer>
     <!-- Copyright -->
-    <div class="copyright text-center pb-5">
-    @php
-        $year = date('Y');
-    @endphp
-        <div class="container"><small>Copyright &copy;  <!--2021-->{{$year}}</small></div>
-        
-    </div>
+        <div class="copyright text-center pb-5">
+        @php
+            $year = date('Y');
+        @endphp
+            <div class="container"><small>Copyright &copy;  <!--2021-->{{$year}}</small></div>
+            
+        </div>
+    </footer>
+    

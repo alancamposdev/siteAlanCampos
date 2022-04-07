@@ -97,4 +97,6 @@
 
     <x-contact />
 
+    <x-footer/>
+
 @endsection

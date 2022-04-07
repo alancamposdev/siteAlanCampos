@@ -39,14 +39,11 @@
         @yield('content')
     </main>
 
-    <x-footer />
 
-    <x-btnScrool />
-    {{-- https://wa.me/55(aqui seu numero com ddd | tudo junto)?text=Adorei%20seu%20artigo --}}
-
-    <a href="https://api.whatsapp.com/send?phone=556984067550" target="_blank" class="btnWhats animate__animated animate__bounce animate__repeat-3 3">
-    <i style="margin-top:16px" class="fa fa-whatsapp"></i>
-    </a>
+    {{-- <x-btnScrool />     --}}
+    <x-btnWhatsapp/>
+    
+    
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -54,6 +51,5 @@
     </script>
     <!-- Bootstrap Main -->
     <script src="{{ asset('js/app.js') }}"></script>
-
 </body>
 </html>

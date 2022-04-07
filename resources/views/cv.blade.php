@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?&family=Sacramento&display=swap" rel="stylesheet">
+    <meta name="keywords" content="">
 
     <link href="{{ mix('css/cv.css') }}" rel="stylesheet">
     <title>Curriculum Online</title>
@@ -135,7 +136,7 @@
                     <h3>Educação e Idiomas</h3>
                 </div>
                 <div class="desc">
-                    <p>Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas (2021-2022)</p>
+                    <p>Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas (2021-2022).</p>
                     <p>Inglês básico</p>
                 </div>
             </section>
@@ -145,8 +146,13 @@
                     <h3>Pessoal</h3>
                 </div>
                 <div class="desc">
-                    <p></p>
+                    <p>
+                        Olá, atualmente sou funcionário público e estou em processo de transição de carreira. Tenho a cada dia procurado me qualificar com um curso superior e cursos na área de programação web. 
+
+                    </p>
                 </div>
+                <div class="badge-base LI-profile-badge" data-locale="pt_BR" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="alancamposdeveloper" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://br.linkedin.com/in/alancamposdeveloper?trk=profile-badge"></a></div>
+              
             </section>
         </main>
     </div>
@@ -160,6 +166,7 @@
             doc.classList.toggle('t-dark');
         }
     </script>
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 
 </body>
 
