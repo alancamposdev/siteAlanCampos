@@ -11,12 +11,7 @@
             
             
           </button>
-          {{-- <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button"
-                data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
-                aria-expanded="false" aria-label="Toggle navigation">
-                Menu
-                <i class="fas fa-bars"></i>
-            </button> --}}
+          
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             
             <ul class="navbar-nav  mb-2 mb-lg-0 ms-auto ">

@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('titulo', 'Alan Campos - Desenvolvedor Full Stack')
+@section('titulo', 'Alan Campos - Desenvolvedor Web')
 
 @section('content')
 
