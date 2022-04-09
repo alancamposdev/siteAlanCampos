@@ -4,6 +4,11 @@
 
 @section('content')
 
+<div>
+    <span>teste Alan</span>
+</div>    
+
+
     <section class="page-section page-projects">
         {{-- total de projetos --}}
         <div class="box-top container bg-success my-3">
