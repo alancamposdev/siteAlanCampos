@@ -7,3 +7,5 @@ mix.js('resources/js/main.js', 'public/js')
     .sass('resources/sass/main.scss', 'public/css/main.css');
 
 mix.browserSync('localhost');
+
+mix.version();
