@@ -25,9 +25,10 @@ class ContatoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-       //
+       
+
     }
 
     /**
@@ -38,13 +39,21 @@ class ContatoController extends Controller
      */
     public function store(Request $request)
     {   
-        //envia para o banco de dados
+         //envia para o banco de dados
         Contato::create ([
-            'nome' => $request -> nome,
-            'email'=> $request -> email,
-            'assunto' => $request -> assunto,
-            'mensagem' => $request -> mensagem
+        'nome' => $request -> nome,
+        'email'=> $request -> email,
+        'assunto' => $request -> assunto,
+        'mensagem' => $request -> mensagem
         ]);
+        
+        $request->validate([
+            'nome' => 'required|string',
+            'email'=> 'required|email',
+            'assunto' => 'required|string',
+            'mensagem' => 'required'
+        ],        
+        );
 
         $data = array (
             'nome' => $request->nome,
@@ -59,6 +68,8 @@ class ContatoController extends Controller
         return redirect()->back()->with([
             'message' => 'Sucesso'
         ]);
+
+       
          
     }
 

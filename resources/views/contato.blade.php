@@ -42,9 +42,38 @@
                     
                     <form id="contactForm" method="POST" action="/contato">
                         @csrf
+
+                        {{-- tratamento de erros --}}
+                        @if (count($errors) > 0)
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <strong>Preencha os dados corretamente</strong>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{$error}}</li>
+                                @endforeach
+                            </ul>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                        @endif
+
+                        @if($message = Session::get('success'))                        
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>Obrigado!</strong> {{ $message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                        @endif
+
+                        @if ($message = Session::get('error'))
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>OPS !</strong>
+                            {{$message}}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                               
+                        </div>                            
+                        @endif
                         <!-- Name input-->
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="name" name="nome" type="text" placeholder="" required />
+                            <input class="form-control" id="name" name="nome" type="text" placeholder=""  required/>
                             <label for="name">Nome</label>
                                                       
                         </div>
@@ -55,45 +84,42 @@
                                                   
                         </div>
 
-                        <!-- Phone number input-->
+                        <!-- Assunto input-->
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="assunto" name="assunto" type="text" placeholder="(00) 00000-0000" required>
+                            <input class="form-control" id="assunto" name="assunto" type="text" placeholder="" required>
                             <label for="assunto">Assunto</label>
                             
                         </div>
 
                         <!-- Message input-->
                         <div class="form-floating mb-3">
-                            <textarea class="form-control" id="mensagem" name="mensagem" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+                            <textarea 
+                            class="form-control" 
+                            id="mensagem" 
+                            name="mensagem"                            
+                            style= "height:auto;" 
+                            placeholder="Digite sua mensagem" 
+                            data-sb-validations="required" required>                          
+                            </textarea>
                             <label for="mensagem">Mensagem</label>
                             
                         </div>                      
                        
                         
 
-                        <!-- Alert Messenger -->
-                        @if(\Session::has('message'))
-                            <button class="btn btn-outline-success btn-xl w-100" disabled>
-                                {{ \Session::get('message') }}
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="ml-3 bi bi-check-circle-fill" viewBox="0 0 16 16">
-                                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                                </svg><br>
-                                
-                            </button>
-                            <div class=" alert bg-success p-3 text-white-50">Obrigado! Responderei o mais breve possível 
-                                <p><a href="{{asset('/home')}}" class="alert-link">>> Clique aqui << </a>, para voltar a página inicial.</p>
-                            </div>
-                        @else
+                        
                             <!-- Submit Button-->
                             <button class="btn btn-primary btn-xl" id="submitButton" type="submit">Enviar Mensagem</button>
-                        @endif
-                        <div class="mt-3">                            
+                        
+                                               
                         
                     </form>
                 </div>
             </div>
         </div>
     </section>
+
+    
     <x-footer/>
 </body>
 </html>
