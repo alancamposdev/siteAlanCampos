@@ -3,11 +3,12 @@
 
 Desenvolvimento de uma aplicação web completa, com páginas dinâmicas usando o framework Laravel. 
 
+> Status : FORA DO AR por tempo indeterminado.
+> 
 Conhecimentos exigidos
 
 `HTML5 | CSS3 | Saas | Bootstrap | JavaScript | PHP | SQL | Blade | Docker |`
-
-> Status : site postado e em continua evolução.
+ 
 
 ---
 __Autor: [Alan Campos](https://www.linkedin.com/in/alancamposdeveloper/) <br>
